@@ -1,0 +1,30 @@
+{
+  "name": "backend-workout",
+  "version": "1.0.0",
+  "description": "Basic practice to carry out backend exercises",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test",
+    "start": "tsc && node dist/app.js",
+    "build": "tsc",
+    "dev": "concurrently \"tsc -w\" \"nodemon dist/app.js\""
+  },
+  "keywords": [
+    "Backend"
+  ],
+  "author": "Siddharth Krishnan",
+  "license": "MIT",
+  "dependencies": {
+    "bull": "^3.16.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/bull": "^3.14.0",
+    "@types/express": "^4.17.7",
+    "@types/node": "^14.0.26",
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.7"
+  }
+}
