@@ -1,0 +1,28 @@
+version: "2.0"
+
+networks:
+  app_tier:
+    driver: bridge
+
+services:
+  redis:
+    image: "bitnami/redis:latest"
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    networks:
+      - app_tier
+    volumes:
+      - redis_volume:/bitnami/redis/data
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+
+  backend-workout:
+    build:
+      context: .
+    networks:
+      - app_tier
+    depends_on: 
+      - redis
+
+volumes:
+  redis_volume:
